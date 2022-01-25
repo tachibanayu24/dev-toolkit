@@ -6,27 +6,36 @@ import { Card } from "@/components/Card";
 const Home: NextPage = () => {
   return (
     <>
-      <div className="flex gap-10">
+      <div className="flex gap-10 mb-10">
         <Card
-          to="#"
           title="UUID Generator"
           description="Generate random IDs based on UUID v4"
           shortcut="uuid + ↵"
+          isComingSoon
         />
         <Card
-          to="#"
+          title="HTML Color Names"
+          description="List the color names supported by all browsers"
+          shortcut="color + ↵"
+          isComingSoon
+        />
+        <Card
           title="JSON Diff Checker"
           description="Semantically compare two JSON objects"
           shortcut="diff + ↵"
           isComingSoon
         />
+      </div>
+
+      <div className="flex gap-10">
         <Card
-          to="#"
           title="JSON Editor"
           description="Edit, validate and format JSON"
           shortcut="edit + ↵"
           isComingSoon
         />
+        <div className="w-full" />
+        <div className="w-full" />
       </div>
     </>
   );
