@@ -21,11 +21,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel="stylesheet"
           type="text/css"
         />
-
         <meta
           name="description"
           content="DevToolkit - Free Online Developer Tools"
         />
+        <meta name="viewport" content="width=1200" />
       </Head>
 
       <DefaultLayout>
