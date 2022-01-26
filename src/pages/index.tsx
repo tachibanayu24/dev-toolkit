@@ -7,7 +7,7 @@ import { useInputKey } from "@/hooks/useInputKey";
 const KEYWORDS = ["count", "uuid", "color", "diff", "edit"];
 
 const Home: NextPage = () => {
-  const { input, matchedIndex, hasInputEnter } = useInputKey(KEYWORDS);
+  const { matchedIndex, hasInputEnter } = useInputKey(KEYWORDS);
 
   return (
     <>

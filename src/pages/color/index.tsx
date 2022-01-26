@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import type { NextPage } from "next";
+import Head from "next/head";
 
 import { useClipboard } from "@/hooks/useClipboard";
 
@@ -25,38 +26,50 @@ const Color: NextPage = () => {
   };
 
   return (
-    <div className="flex justify-center">
-      <div className="w-[80%] flex flex-wrap justify-center gap-4">
-        {Object.keys(COLORS).map((k, i) => {
-          return (
-            <div
-              key={`${COLORS[k]}-${i}`}
-              className="w-[18%] h-[100px] flex flex-col items-center justify-center rounded-md shadow-md relative"
-              style={{
-                background: COLORS[k],
-                color: getContrastColor(COLORS[k]),
-              }}
-            >
-              {copyCode === k ? (
-                <p className="font-bold text-lg">Copied!</p>
-              ) : (
-                <>
-                  <p className="font-bold">{k}</p>
-                  <p className="text-sm">{COLORS[k].toUpperCase()}</p>
-                </>
-              )}
+    <>
+      <Head>
+        <title>
+          HTML Color Names | DevToolkit - Free Online Developer Tools
+        </title>
+        <meta
+          name="description"
+          content="A palette of named HTML colors that is compatible with all modern browsers.You can add a color by giving the color naming to the style without specifying a color code."
+        />
+      </Head>
 
-              <button
-                onClick={() => handleClick(k)}
-                className="absolute bottom-2 right-2 text-sm rounded-full p-2 shadow-lg cursor-pointer select-none"
+      <div className="flex justify-center">
+        <div className="w-[80%] flex flex-wrap justify-center gap-4">
+          {Object.keys(COLORS).map((k, i) => {
+            return (
+              <div
+                key={`${COLORS[k]}-${i}`}
+                className="w-[18%] h-[100px] flex flex-col items-center justify-center rounded-md shadow-md relative"
+                style={{
+                  background: COLORS[k],
+                  color: getContrastColor(COLORS[k]),
+                }}
               >
-                🔗
-              </button>
-            </div>
-          );
-        })}
+                {copyCode === k ? (
+                  <p className="font-bold text-lg">Copied!</p>
+                ) : (
+                  <>
+                    <p className="font-bold">{k}</p>
+                    <p className="text-sm">{COLORS[k].toUpperCase()}</p>
+                  </>
+                )}
+
+                <button
+                  onClick={() => handleClick(k)}
+                  className="absolute bottom-2 right-2 text-sm rounded-full p-2 shadow-lg cursor-pointer select-none"
+                >
+                  🔗
+                </button>
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

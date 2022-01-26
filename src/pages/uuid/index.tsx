@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import type { NextPage } from "next";
+import Head from "next/head";
 import { v1, v4 } from "uuid";
 
 import { useClipboard } from "@/hooks/useClipboard";
@@ -62,68 +63,78 @@ const Uuid: NextPage = () => {
   );
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <form onSubmit={handleSubmit}>
-        <div className="flex justify-center items-baseline">
-          <span className="text-xl font-bold px-2">Generate</span>
-          <input
-            autoFocus
-            type="number"
-            value={value}
-            className="text-xl text-gray-900 px-3 py-1 rounded-sm shadow-md w-[100px] mr-4"
-            onChange={(e) => handleChange(Number(e.target.value))}
-          />
-          <select
-            name="version"
-            className="mx-2 h-full text-xl text-gray-900 p-1 rounded-sm shadow-md"
-            value={version}
-            onChange={(e) => setVersion(e.target.value)}
-          >
-            <option value="v1">v1</option>
-            <option value="v4">v4</option>
-          </select>
+    <>
+      <Head>
+        <title>UUID Generator | DevToolkit - Free Online Developer Tools</title>
+        <meta
+          name="description"
+          content="Generate and copy an arbitrary number of UUIDs.V1 and v4 are supported. You can also generate a large number of UUIDs at once and copy them in a batch."
+        />
+      </Head>
 
-          <span className="text-xl font-bold px-2">based UUIDs</span>
-        </div>
+      <div className="flex flex-col items-center justify-center">
+        <form onSubmit={handleSubmit}>
+          <div className="flex justify-center items-baseline">
+            <span className="text-xl font-bold px-2">Generate</span>
+            <input
+              autoFocus
+              type="number"
+              value={value}
+              className="text-xl text-gray-900 px-3 py-1 rounded-sm shadow-md w-[100px] mr-4"
+              onChange={(e) => handleChange(Number(e.target.value))}
+            />
+            <select
+              name="version"
+              className="mx-2 h-full text-xl text-gray-900 p-1 rounded-sm shadow-md"
+              value={version}
+              onChange={(e) => setVersion(e.target.value)}
+            >
+              <option value="v1">v1</option>
+              <option value="v4">v4</option>
+            </select>
 
-        <div className="flex justify-center">
-          <button className="mt-8 bg-green-500 py-3 px-6 rounded-full font-bold shadow-md hover:bg-green-600 active:bg-green-700">
-            Generate
-          </button>
-        </div>
-      </form>
-
-      {ids.length > 0 && (
-        <>
-          <button
-            className="mt-8 bg-slate-500 py-2 px-20 rounded-full font-bold shadow-md hover:bg-slate-600 active:bg-slate-700"
-            onClick={handleBulkCopyClick}
-          >
-            Bulk Copy
-          </button>
-
-          <div className="mt-8 flex flex-wrap justify-around w-[90%]">
-            {ids.map((id) => (
-              <div key={id} className={`w-[40%] m-2 ml-10`}>
-                <button
-                  onClick={() => handleCopyClick(id)}
-                  className={`text-xs rounded-full p-2 shadow-lg cursor-pointer select-none mr-2 ${
-                    copiedIds.includes(id) ? "bg-green-400" : "bg-slate-600"
-                  }`}
-                >
-                  {copiedIds.includes(id) ? "✅" : "🔗"}
-                </button>
-                <span
-                  className={`${copiedIds.includes(id) ? "opacity-70" : ""}`}
-                >
-                  {id}
-                </span>
-              </div>
-            ))}
+            <span className="text-xl font-bold px-2">based UUIDs</span>
           </div>
-        </>
-      )}
-    </div>
+
+          <div className="flex justify-center">
+            <button className="mt-8 bg-green-500 py-3 px-6 rounded-full font-bold shadow-md hover:bg-green-600 active:bg-green-700">
+              Generate
+            </button>
+          </div>
+        </form>
+
+        {ids.length > 0 && (
+          <>
+            <button
+              className="mt-8 bg-slate-500 py-2 px-20 rounded-full font-bold shadow-md hover:bg-slate-600 active:bg-slate-700"
+              onClick={handleBulkCopyClick}
+            >
+              Bulk Copy
+            </button>
+
+            <div className="mt-8 flex flex-wrap justify-around w-[90%]">
+              {ids.map((id) => (
+                <div key={id} className={`w-[40%] m-2 ml-10`}>
+                  <button
+                    onClick={() => handleCopyClick(id)}
+                    className={`text-xs rounded-full p-2 shadow-lg cursor-pointer select-none mr-2 ${
+                      copiedIds.includes(id) ? "bg-green-400" : "bg-slate-600"
+                    }`}
+                  >
+                    {copiedIds.includes(id) ? "✅" : "🔗"}
+                  </button>
+                  <span
+                    className={`${copiedIds.includes(id) ? "opacity-70" : ""}`}
+                  >
+                    {id}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+    </>
   );
 };
 
