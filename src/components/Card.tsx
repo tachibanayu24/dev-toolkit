@@ -1,4 +1,4 @@
-import { useCallback, useEffect, VFC } from "react";
+import { useState, useCallback, useEffect, VFC } from "react";
 
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -54,20 +54,20 @@ export const Card: VFC<Props> = ({
           isFocus ? "bg-blue-600" : "bg-blue-500"
         }`}
       >
-        {isComingSoon ? (
-          <p className="text-2xl font-bold rotate-6 shadow-lg p-4 bg-blue-700 rounded-md">
-            Coming Soon... 🚧
-          </p>
-        ) : (
+        {!isComingSoon && imagePath ? (
           <div className="w-[80%] h-[80%] relative">
             <Image
               className="rounded-lg shadow-lg"
-              src="/images/counter.gif"
+              src={imagePath}
               layout="fill"
               objectFit="fill"
               alt="counter"
             />
           </div>
+        ) : (
+          <p className="text-2xl font-bold rotate-6 shadow-lg p-4 bg-blue-700 rounded-md">
+            Coming Soon... 🚧
+          </p>
         )}
       </div>
       <div className="m-4 h-[120px] relative">
@@ -81,7 +81,7 @@ export const Card: VFC<Props> = ({
       </div>
       {isFocus && (
         <p className="absolute top-3 left-1/2 z-10 text-6xl -translate-x-1/2 -translate-y-1/2 rounded-full p-2 shadow-2xl">
-          📍
+          {to ? "📍" : "🙇"}
         </p>
       )}
     </div>

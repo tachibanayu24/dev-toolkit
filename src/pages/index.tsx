@@ -17,6 +17,7 @@ const Home: NextPage = () => {
           title="Characters counter"
           description="Count the number of characters entered"
           shortcut={`${KEYWORDS[0]} + ↵`}
+          imagePath="/images/counter.gif"
           isFocus={matchedIndex === 0}
           hasInputEnter={input.slice(-1)[0] === "Enter"}
         />
