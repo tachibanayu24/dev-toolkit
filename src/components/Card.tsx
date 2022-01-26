@@ -81,7 +81,7 @@ export const Card: VFC<Props> = ({
       </div>
       {isFocus && (
         <p className="absolute top-3 left-1/2 z-10 text-6xl -translate-x-1/2 -translate-y-1/2 rounded-full p-2 shadow-2xl">
-          {to ? "📍" : "🙇"}
+          {to ? "👇" : "🙇"}
         </p>
       )}
     </div>

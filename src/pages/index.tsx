@@ -7,7 +7,7 @@ import { useInputKey } from "@/hooks/useInputKey";
 const KEYWORDS = ["count", "uuid", "color", "diff", "edit"];
 
 const Home: NextPage = () => {
-  const { input, matchedIndex } = useInputKey(KEYWORDS);
+  const { input, matchedIndex, hasInputEnter } = useInputKey(KEYWORDS);
 
   return (
     <>
@@ -19,7 +19,7 @@ const Home: NextPage = () => {
           shortcut={`${KEYWORDS[0]} + ↵`}
           imagePath="/images/counter.gif"
           isFocus={matchedIndex === 0}
-          hasInputEnter={input.slice(-1)[0] === "Enter"}
+          hasInputEnter={hasInputEnter}
         />
         <Card
           to="/uuid"
@@ -28,7 +28,7 @@ const Home: NextPage = () => {
           shortcut={`${KEYWORDS[1]} + ↵`}
           imagePath="/images/uuid.gif"
           isFocus={matchedIndex === 1}
-          hasInputEnter={input.slice(-1)[0] === "Enter"}
+          hasInputEnter={hasInputEnter}
         />
         <Card
           to="/color"
@@ -37,7 +37,7 @@ const Home: NextPage = () => {
           shortcut={`${KEYWORDS[2]} + ↵`}
           imagePath="/images/color.gif"
           isFocus={matchedIndex === 2}
-          hasInputEnter={input.slice(-1)[0] === "Enter"}
+          hasInputEnter={hasInputEnter}
         />
       </div>
 
@@ -48,7 +48,7 @@ const Home: NextPage = () => {
           shortcut={`${KEYWORDS[3]} + ↵`}
           isComingSoon
           isFocus={matchedIndex === 3}
-          hasInputEnter={input.slice(-1)[0] === "Enter"}
+          hasInputEnter={hasInputEnter}
         />
         <Card
           title="JSON Editor"
@@ -56,7 +56,7 @@ const Home: NextPage = () => {
           shortcut={`${KEYWORDS[4]} + ↵`}
           isComingSoon
           isFocus={matchedIndex === 4}
-          hasInputEnter={input.slice(-1)[0] === "Enter"}
+          hasInputEnter={hasInputEnter}
         />
         <div className="w-full" />
       </div>
