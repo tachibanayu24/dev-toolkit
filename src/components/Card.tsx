@@ -28,13 +28,13 @@ export const Card: VFC<Props> = ({
     if (to) {
       router.push(to);
     }
-  }, []);
+  }, [router, to]);
 
   useEffect(() => {
     if (hasInputEnter) {
       handleClick();
     }
-  }, [hasInputEnter]);
+  }, [handleClick, hasInputEnter]);
 
   return (
     <div

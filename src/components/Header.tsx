@@ -16,8 +16,9 @@ export const Header: VFC<Props> = ({ isDarkMode, onToggle }) => {
             </a>
           </Link>
           <p className="font-light leading-5">
-            Developer tools for your everyday tasks. <br />
-            It don't collect any data, so you can use it offline in secure.
+            {`Developer tools for your everyday tasks.`}
+            <br />
+            {`It don't collect any data, so you can use it offline in secure.`}
           </p>
         </div>
         <div className="absolute right-8">
