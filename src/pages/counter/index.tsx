@@ -41,6 +41,7 @@ const Counter: NextPage = () => {
         </div>
         <div className="flex justify-center">
           <textarea
+            autoFocus
             rows={20}
             placeholder="Type, paste, cut text here..."
             className="w-full rounded-md shadow-lg text-gray-900 p-2 bg-slate-100"
