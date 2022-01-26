@@ -1,12 +1,13 @@
 import { useCallback, useEffect, VFC } from "react";
 
-// import Image from "next/image";
+import Image from "next/image";
 import { useRouter } from "next/router";
 
 type Props = {
   title: string;
   description: string;
   shortcut: string;
+  imagePath?: string;
   to?: string;
   isComingSoon?: boolean;
   isFocus?: boolean;
@@ -17,6 +18,7 @@ export const Card: VFC<Props> = ({
   title,
   description,
   shortcut,
+  imagePath,
   to,
   isComingSoon,
   isFocus,
@@ -31,27 +33,41 @@ export const Card: VFC<Props> = ({
   }, [router, to]);
 
   useEffect(() => {
-    if (hasInputEnter) {
+    if (hasInputEnter && isFocus) {
       handleClick();
     }
-  }, [handleClick, hasInputEnter]);
+  }, [handleClick, hasInputEnter, isFocus]);
 
   return (
     <div
       onClick={handleClick}
       className={`w-full rounded-md ${
         isFocus
-          ? `bg-black/40 dark:bg-white/40`
+          ? `bg-black/10 dark:bg-white/10`
           : `bg-black/20 dark:bg-white/20`
-      }  hover:bg-black/40  dark:hover:bg-white/40 h-[320px] shadow-lg`}
+      } ${
+        isComingSoon ? "" : "cursor-pointer"
+      } hover:bg-black/10 dark:hover:bg-white/10 h-[320px] shadow-lg relative`}
     >
-      <div className="w-full h-[200px] bg-blue-500 rounded-t-md flex justify-center items-center">
+      <div
+        className={`w-full h-[200px]  rounded-t-md flex justify-center items-center ${
+          isFocus ? "bg-blue-600" : "bg-blue-500"
+        }`}
+      >
         {isComingSoon ? (
-          <p className="text-2xl font-bold rotate-6 shadow-lg p-4 bg-blue-600 rounded-md">
+          <p className="text-2xl font-bold rotate-6 shadow-lg p-4 bg-blue-700 rounded-md">
             Coming Soon... 🚧
           </p>
         ) : (
-          <p>Image Area</p>
+          <div className="w-[80%] h-[80%] relative">
+            <Image
+              className="rounded-lg shadow-lg"
+              src="/images/counter.gif"
+              layout="fill"
+              objectFit="fill"
+              alt="counter"
+            />
+          </div>
         )}
       </div>
       <div className="m-4 h-[120px] relative">
@@ -63,6 +79,11 @@ export const Card: VFC<Props> = ({
           Type <code>{shortcut}</code>
         </p>
       </div>
+      {isFocus && (
+        <p className="absolute top-3 left-1/2 z-10 text-6xl -translate-x-1/2 -translate-y-1/2 rounded-full p-2 shadow-2xl">
+          📍
+        </p>
+      )}
     </div>
   );
 };
