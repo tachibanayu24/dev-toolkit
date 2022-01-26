@@ -30,10 +30,11 @@ const Home: NextPage = () => {
           hasInputEnter={input.slice(-1)[0] === "Enter"}
         />
         <Card
+          to="/color"
           title="HTML Color Names"
           description="List the color names supported by all browsers"
           shortcut={`${KEYWORDS[2]} + ↵`}
-          isComingSoon
+          imagePath="/images/color.gif"
           isFocus={matchedIndex === 2}
           hasInputEnter={input.slice(-1)[0] === "Enter"}
         />
