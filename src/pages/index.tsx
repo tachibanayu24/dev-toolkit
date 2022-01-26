@@ -22,10 +22,11 @@ const Home: NextPage = () => {
           hasInputEnter={input.slice(-1)[0] === "Enter"}
         />
         <Card
+          to="/uuid"
           title="UUID Generator"
           description="Generate random IDs based on UUID v4"
           shortcut={`${KEYWORDS[1]} + ↵`}
-          isComingSoon
+          imagePath="/images/uuid.gif"
           isFocus={matchedIndex === 1}
           hasInputEnter={input.slice(-1)[0] === "Enter"}
         />

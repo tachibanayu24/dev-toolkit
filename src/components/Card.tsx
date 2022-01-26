@@ -55,7 +55,7 @@ export const Card: VFC<Props> = ({
         }`}
       >
         {!isComingSoon && imagePath ? (
-          <div className="w-[80%] h-[80%] relative">
+          <div className="w-[85%] h-[85%] relative">
             <Image
               className="rounded-lg shadow-lg"
               src={imagePath}
