@@ -26,6 +26,27 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="DevToolkit - Free Online Developer Tools"
         />
         <meta name="viewport" content="width=1200" />
+
+        <meta property="og:url" content="https://kit.tachibanayu24.com" />
+        <meta
+          property="og:title"
+          content="🔧 DevToolkit - Free Online Developer Tools"
+        />
+        <meta
+          property="og:site_name"
+          content="🔧 DevToolkit - Free Online Developer Tools"
+        />
+        <meta
+          property="og:description"
+          content="Developer tools for your everyday tasks. It don't collect any data, so you can use it offline in secure."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://kit.tachibanayu24.com/_next/image?url=%2Fimages%2Fogp.png&w=1920&q=75"
+        />
+        <meta property="og:image:width" content="1280" />
+        <meta property="og:image:height" content="960" />
       </Head>
 
       <DefaultLayout>

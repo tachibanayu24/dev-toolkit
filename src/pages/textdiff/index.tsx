@@ -42,7 +42,7 @@ const TextDiff: NextPage = () => {
     <>
       <Head>
         <title>
-          TextDiff Diff Checker | DevToolkit - Free Online Developer Tools
+          Text Diff Checker | DevToolkit - Free Online Developer Tools
         </title>
         <meta
           name="description"
