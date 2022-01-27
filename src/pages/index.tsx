@@ -4,7 +4,7 @@ import type { NextPage } from "next";
 import { Card } from "@/components/Card";
 import { useInputKey } from "@/hooks/useInputKey";
 
-const KEYWORDS = ["count", "uuid", "color", "diff", "edit"];
+const KEYWORDS = ["count", "uuid", "color", "textdiff", "jsondiff", "jsonedit"];
 
 const Home: NextPage = () => {
   const { matchedIndex, hasInputEnter } = useInputKey(KEYWORDS);
@@ -43,22 +43,31 @@ const Home: NextPage = () => {
 
       <div className="flex gap-10">
         <Card
-          title="JSON Diff Checker"
-          description="Semantically compare two JSON objects"
+          to="textdiff"
+          title="Text Diff Checker"
+          description="Check and highlight text or code differences"
           shortcut={`${KEYWORDS[3]} + ↵`}
-          isComingSoon
+          imagePath="/images/textdiff.gif"
           isFocus={matchedIndex === 3}
           hasInputEnter={hasInputEnter}
         />
         <Card
-          title="JSON Editor"
-          description="Edit, validate and format JSON"
+          title="JSON Diff Checker"
+          description="Get the diff between the two JSONs and show which properties have changed"
           shortcut={`${KEYWORDS[4]} + ↵`}
           isComingSoon
           isFocus={matchedIndex === 4}
           hasInputEnter={hasInputEnter}
         />
-        <div className="w-full" />
+        <Card
+          title="JSON Editor"
+          description="Edit, validate and format JSON"
+          shortcut={`${KEYWORDS[5]} + ↵`}
+          isComingSoon
+          isFocus={matchedIndex === 5}
+          hasInputEnter={hasInputEnter}
+        />
+        {/* <div className="w-full" /> */}
       </div>
     </>
   );
