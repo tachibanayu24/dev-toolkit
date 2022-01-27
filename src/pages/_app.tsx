@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { DefaultSeo } from "next-seo";
 
 import "tailwindcss/tailwind.css";
 import "@/styles/global.css";
@@ -11,7 +12,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>DevToolkit - Free Online Developer Tools</title>
         <link
           rel="icon"
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%%22 y=%2250%%22 style=%22dominant-baseline:central;text-anchor:middle;font-size:90px;%22>🔧</text></svg>"
@@ -21,33 +21,36 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel="stylesheet"
           type="text/css"
         />
-        <meta
-          name="description"
-          content="DevToolkit - Free Online Developer Tools"
-        />
         <meta name="viewport" content="width=1200" />
-
-        <meta property="og:url" content="https://kit.tachibanayu24.com" />
-        <meta
-          property="og:title"
-          content="🔧 DevToolkit - Free Online Developer Tools"
-        />
-        <meta
-          property="og:site_name"
-          content="🔧 DevToolkit - Free Online Developer Tools"
-        />
-        <meta
-          property="og:description"
-          content="Developer tools for your everyday tasks. It don't collect any data, so you can use it offline in secure."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://kit.tachibanayu24.com/_next/image?url=%2Fimages%2Fogp.png&w=1920&q=75"
-        />
-        <meta property="og:image:width" content="1280" />
-        <meta property="og:image:height" content="960" />
       </Head>
+
+      <DefaultSeo
+        defaultTitle="DevToolkit - Free Online Developer Tools"
+        canonical="https://kit.tachibanayu24.com"
+        description="Developer tools for your everyday tasks. It don't collect any data, so you can use it offline in secure."
+        twitter={{
+          handle: "tachibanayu24",
+          site: "tachibanayu24",
+          cardType: "summary",
+        }}
+        openGraph={{
+          type: "website",
+          title: "🔧 DevToolkit - Free Online Developer Tools",
+          description:
+            "Developer tools for your everyday tasks. It don't collect any data, so you can use it offline in secure.",
+          site_name: "🔧 DevToolkit - Free Online Developer Tools",
+          url: "https://kit.tachibanayu24.com",
+
+          images: [
+            {
+              url: "https://storage.googleapis.com/tachibanayu24/kit/ogp.png",
+              width: 1140,
+              height: 600,
+              alt: "DevToolkit",
+            },
+          ],
+        }}
+      />
 
       <DefaultLayout>
         <Component {...pageProps} />
