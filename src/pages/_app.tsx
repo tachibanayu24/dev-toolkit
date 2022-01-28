@@ -43,7 +43,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
           images: [
             {
-              url: "https://storage.googleapis.com/tachibanayu24/kit/ogp.png",
+              url: "https://storage.googleapis.com/tachibanayu24/kit/ogp-v2.png",
               width: 1140,
               height: 600,
               alt: "DevToolkit",

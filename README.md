@@ -34,7 +34,7 @@ The following tools are planned for development
 
 More tools will be added in the future.
 
-![DevToys](https://storage.googleapis.com/tachibanayu24/kit/ogp.png)
+![DevToys](https://storage.googleapis.com/tachibanayu24/kit/ogp-v2.png)
 
 ## Contribute
 
