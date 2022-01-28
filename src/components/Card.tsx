@@ -43,8 +43,8 @@ export const Card: VFC<Props> = ({
       onClick={handleClick}
       className={`w-full rounded-md ${
         isFocus
-          ? `bg-black/10 dark:bg-white/10`
-          : `bg-black/20 dark:bg-white/20`
+          ? `bg-slate-900/10 dark:bg-white/10`
+          : `bg-slate-900/20 dark:bg-white/20`
       } ${
         isComingSoon ? "" : "cursor-pointer"
       } hover:bg-black/10 dark:hover:bg-white/10 h-[320px] shadow-lg relative`}
@@ -65,7 +65,7 @@ export const Card: VFC<Props> = ({
             />
           </div>
         ) : (
-          <p className="text-2xl font-bold rotate-6 shadow-lg p-4 bg-blue-700 rounded-md">
+          <p className="text-2xl text-white font-bold rotate-6 shadow-lg p-4 bg-blue-700 rounded-md">
             Coming Soon... 🚧
           </p>
         )}

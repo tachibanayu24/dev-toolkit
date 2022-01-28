@@ -105,14 +105,14 @@ const Uuid: NextPage = () => {
 
         {ids.length > 0 && (
           <>
-            <button
-              className="mt-8 bg-slate-500 py-2 px-20 rounded-full font-bold shadow-md hover:bg-slate-600 active:bg-slate-700"
+            <p
+              className="mt-8 p-2 font-bold text-red-400 cursor-pointer"
               onClick={handleBulkCopyClick}
             >
-              Bulk Copy
-            </button>
+              Copy All
+            </p>
 
-            <div className="mt-8 flex flex-wrap justify-around w-[90%]">
+            <div className="mt-4 flex flex-wrap justify-around w-[90%]">
               {ids.map((id) => (
                 <div key={id} className={`w-[40%] m-2 ml-10`}>
                   <button

@@ -12,7 +12,7 @@ export default function DefaultLayout({ children }: { children: ReactChild }) {
 
   return (
     <div className={isDarkMode ? "dark" : undefined}>
-      <div className="flex flex-col min-h-screen antialiased hover:subpixel-antialiased text-gray-800 dark:text-gray-200 bg-gray-100 dark:bg-gray-800">
+      <div className="flex flex-col min-h-screen antialiased hover:subpixel-antialiased text-gray-800 dark:text-gray-200 bg-slate-100 dark:bg-slate-800">
         <Header
           isDarkMode={isDarkMode}
           onToggle={() => setIsDarkMode(!isDarkMode)}
