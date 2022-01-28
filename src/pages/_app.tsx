@@ -1,4 +1,5 @@
 import Head from "next/head";
+
 import { DefaultSeo } from "next-seo";
 
 import "tailwindcss/tailwind.css";
@@ -7,8 +8,12 @@ import "@/styles/common.css";
 
 import type { AppProps } from "next/app";
 import DefaultLayout from "@/layouts/DefaultLayout";
+import { GA } from "@/components/GA";
+import { usePageView } from "@/hooks/usePageView";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
+  usePageView();
+
   return (
     <>
       <Head>
@@ -51,6 +56,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           ],
         }}
       />
+      <GA />
 
       <DefaultLayout>
         <Component {...pageProps} />
@@ -59,4 +65,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default App;
