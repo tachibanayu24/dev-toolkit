@@ -1,5 +1,5 @@
-<p align="center" style="font-size: 80px;">
-  🔧
+<p align="center">
+  <img width="128" align="center" src="https://storage.googleapis.com/tachibanayu24/kit/wrench.png">
 </p>
 <h1 align="center">
   Dev Toolkit
