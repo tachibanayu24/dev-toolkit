@@ -13,11 +13,9 @@
 
 ## Introduction
 
-DevToolkit provides browser-based tools to help developers with their daily tasks.Just open your browser and you are ready to go.  
-Simple tools are available for immediate use.
+DevToolkit provides browser-based tools to help developers with their daily tasks.Just open your browser and you are ready to go.
 
-Currently, the following tools are available
-More tools will be added in the future.
+The following tools are available
 
  - Characters counter
  - UUID Generator
@@ -29,6 +27,8 @@ The following tools are planned for development
  - JSON Diff Checker(specialized for JSON checker)
  - JSON Editor ans Formatter
 
+More tools will be added in the future.
+
 <!-- Here is Image -->
 
 ## Contribute
@@ -37,4 +37,4 @@ See [CONTRIBUTING](CONTRIBUTING.md)
 
 ## License
 
-See [LICENSE](LICENSE.md)
+See [LICENSE](LICENSE)
