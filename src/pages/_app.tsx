@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         twitter={{
           handle: "tachibanayu24",
           site: "tachibanayu24",
-          cardType: "summary",
+          cardType: "summary_large_image",
         }}
         openGraph={{
           type: "website",
