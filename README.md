@@ -8,8 +8,13 @@
   A useful browser-based toolkit.
 </p>
 <p align="center">
-<!-- Here is Tags -->
+  <a style="text-decoration:none" href="https://kit.tachibanayu24.com" target="_blank">
+    <img src="https://img.shields.io/badge/Website-kit.tachibanayu24.com-blue" alt="Website" />
+  </a>
+  <img src="http://therealsujitk-vercel-badge.vercel.app/?app=dev-toolkit" alt="Vercel" />
+  <img src="https://img.shields.io/badge/license-MIT-blue" alt="License" />
 </p>
+
 
 ## Introduction
 
