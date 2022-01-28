@@ -1,6 +1,4 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import { DefaultSeo } from "next-seo";
-import { GA } from "@/components/GA";
 
 export default function Document() {
   return (
@@ -16,34 +14,6 @@ export default function Document() {
           type="text/css"
         />
       </Head>
-      <DefaultSeo
-        defaultTitle="DevToolkit - Free Online Developer Tools"
-        canonical="https://kit.tachibanayu24.com"
-        description="Developer tools for your everyday tasks. It don't collect any data, so you can use it offline in secure."
-        twitter={{
-          handle: "tachibanayu24",
-          site: "tachibanayu24",
-          cardType: "summary_large_image",
-        }}
-        openGraph={{
-          type: "website",
-          title: "🔧 DevToolkit - Free Online Developer Tools",
-          description:
-            "Developer tools for your everyday tasks. It don't collect any data, so you can use it offline in secure.",
-          site_name: "🔧 DevToolkit - Free Online Developer Tools",
-          url: "https://kit.tachibanayu24.com",
-
-          images: [
-            {
-              url: "https://storage.googleapis.com/tachibanayu24/kit/ogp-v2.png",
-              width: 1140,
-              height: 600,
-              alt: "DevToolkit",
-            },
-          ],
-        }}
-      />
-      <GA />
 
       <body>
         <Main />
