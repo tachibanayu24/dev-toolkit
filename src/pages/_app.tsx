@@ -16,7 +16,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <meta name="viewport" content="width=1200" />
+        <meta name="viewport" content="width=1280" />
       </Head>
 
       <DefaultSeo
@@ -35,7 +35,6 @@ function App({ Component, pageProps }: AppProps) {
             "Developer tools for your everyday tasks. It don't collect any data, so you can use it offline in secure.",
           site_name: "🔧 DevToolkit - Free Online Developer Tools",
           url: "https://kit.tachibanayu24.com",
-
           images: [
             {
               url: "https://storage.googleapis.com/tachibanayu24/kit/ogp-v2.png",
