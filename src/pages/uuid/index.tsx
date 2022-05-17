@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { v1, v4 } from "uuid";
@@ -8,7 +8,7 @@ import { useClipboard } from "@/hooks/useClipboard";
 const Uuid: NextPage = () => {
   const { handleCopy } = useClipboard();
 
-  const [value, setValue] = useState(10);
+  const [value, setValue] = useState(12);
   const [version, setVersion] = useState<string>("v4");
   const [ids, setIds] = useState<string[]>([]);
   const [copiedIds, setCopiedIds] = useState<string[]>([]);
@@ -62,6 +62,10 @@ const Uuid: NextPage = () => {
     [handleGenerateUUID]
   );
 
+  useEffect(() => {
+    handleGenerateUUID();
+  }, [handleGenerateUUID]);
+
   return (
     <>
       <Head>
@@ -112,19 +116,24 @@ const Uuid: NextPage = () => {
               Copy All
             </p>
 
-            <div className="mt-4 flex flex-wrap justify-around w-[90%]">
+            <div className="mt-4 flex flex-wrap justify-between w-full">
               {ids.map((id) => (
-                <div key={id} className={`w-[40%] m-2 ml-10`}>
+                <div
+                  key={id}
+                  className={`min-w-[330px] my-2 cursor-pointer rounded-full bg-slate-500 flex items-center`}
+                  onClick={() => handleCopyClick(id)}
+                >
                   <button
-                    onClick={() => handleCopyClick(id)}
-                    className={`text-xs rounded-full p-2 shadow-lg cursor-pointer select-none mr-2 ${
+                    className={`text-xs rounded-full p-3 shadow-lg cursor-pointer select-none mr-1 ${
                       copiedIds.includes(id) ? "bg-green-400" : "bg-slate-600"
                     }`}
                   >
                     {copiedIds.includes(id) ? "✅" : "🔗"}
                   </button>
                   <span
-                    className={`${copiedIds.includes(id) ? "opacity-70" : ""}`}
+                    className={`text-sm ${
+                      copiedIds.includes(id) ? "opacity-70" : ""
+                    }`}
                   >
                     {id}
                   </span>
