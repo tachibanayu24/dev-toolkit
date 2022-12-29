@@ -7,5 +7,5 @@ Contributors are welcome.
 * Setup
   * `yarn install` - Runs dependencies install
   * `yarn dev` - Runs boot local server
- * Lint
+* Lint
   * `yarn lint` - Runs ESLint
