@@ -10,6 +10,8 @@ import Blockquote from "@tiptap/extension-blockquote";
 import BulletList from "@tiptap/extension-bullet-list";
 import ListItem from "@tiptap/extension-list-item";
 import CodeBlockLowlight from "@tiptap/extension-code-block-lowlight";
+import HorizontalRule from "@tiptap/extension-horizontal-rule";
+
 import { lowlight } from "lowlight";
 
 import css from "highlight.js/lib/languages/css";
@@ -41,6 +43,7 @@ export const WYSIWYGEditor = () => {
       CodeBlockLowlight.configure({
         lowlight,
       }),
+      HorizontalRule,
     ],
     content: `<h1>Heading1</h1>
 <h2>Heading2</h2>
@@ -69,6 +72,9 @@ export const WYSIWYGEditor = () => {
   else
     console.log(i);
 }</code></pre>
+<p>paragpraph</p>
+<hr>
+<p>paragpraph</p>
 `,
     autofocus: "end",
   });
