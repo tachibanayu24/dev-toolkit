@@ -6,9 +6,22 @@
  *
  */
 
+.ProseMirror:focus-visible {
+  outline: none;
+}
+
+.editor :focus-visible {
+  outline: none;
+}
+
+.editor [data-type="::placeholder"] {
+  color: gray;
+}
+
 .editor {
   background-color: white;
-  color: #111827;
+  /* color: #111827; */
+  min-height: 500px;
 }
 
 .editor h1 {
@@ -24,6 +37,11 @@
 .editor h3 {
   font-size: 20px;
   font-weight: bold;
+}
+
+.editor ol,
+.editor ul {
+  list-style: initial;
 }
 
 .editor > * + * {
