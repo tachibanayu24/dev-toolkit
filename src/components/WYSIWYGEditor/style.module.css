@@ -25,3 +25,65 @@
   font-size: 20px;
   font-weight: bold;
 }
+
+.editor > * + * {
+  margin-top: 0.75em;
+}
+.editor pre {
+  background: #0d0d0d;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-family: "JetBrainsMono", monospace;
+  padding: 0.75rem 1rem;
+}
+.editor pre code {
+  background: none;
+  color: inherit;
+  font-size: 0.8rem;
+  padding: 0;
+  border: none;
+}
+.editor pre .hljs-comment,
+.editor pre .hljs-quote {
+  color: #616161;
+}
+.editor pre .hljs-variable,
+.editor pre .hljs-template-variable,
+.editor pre .hljs-attribute,
+.editor pre .hljs-tag,
+.editor pre .hljs-name,
+.editor pre .hljs-regexp,
+.editor pre .hljs-link,
+.editor pre .hljs-name,
+.editor pre .hljs-selector-id,
+.editor pre .hljs-selector-class {
+  color: #f98181;
+}
+.editor pre .hljs-number,
+.editor pre .hljs-meta,
+.editor pre .hljs-built_in,
+.editor pre .hljs-builtin-name,
+.editor pre .hljs-literal,
+.editor pre .hljs-type,
+.editor pre .hljs-params {
+  color: #fbbc88;
+}
+.editor pre .hljs-string,
+.editor pre .hljs-symbol,
+.editor pre .hljs-bullet {
+  color: #b9f18d;
+}
+.editor pre .hljs-title,
+.editor pre .hljs-section {
+  color: #faf594;
+}
+.editor pre .hljs-keyword,
+.editor pre .hljs-selector-tag {
+  color: #70cff8;
+}
+.editor pre .hljs-emphasis {
+  font-style: italic;
+}
+.editor pre .hljs-strong {
+  font-weight: 700;
+}
