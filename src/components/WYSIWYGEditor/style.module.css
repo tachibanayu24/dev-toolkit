@@ -1,0 +1,27 @@
+/**
+ * #111827 = gray[900]
+ *
+ *
+ *
+ *
+ */
+
+.editor {
+  background-color: white;
+  color: #111827;
+}
+
+.editor h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.editor h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.editor h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
