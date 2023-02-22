@@ -13,6 +13,8 @@ import OrderedList from "@tiptap/extension-ordered-list";
 import CodeBlockLowlight from "@tiptap/extension-code-block-lowlight";
 import HorizontalRule from "@tiptap/extension-horizontal-rule";
 import Image from "@tiptap/extension-image";
+import Dropcursor from "@tiptap/extension-dropcursor";
+import Gapcursor from "@tiptap/extension-gapcursor";
 import History from "@tiptap/extension-history";
 import Placeholder from "@tiptap/extension-placeholder";
 
@@ -47,12 +49,21 @@ export const WYSIWYGEditor = () => {
       Blockquote,
       BulletList,
       ListItem,
+      TaskList,
+      TaskItem.configure({
+        nested: true,
+      }),
       OrderedList,
       CodeBlockLowlight.configure({
         lowlight,
       }),
       HorizontalRule,
       Image,
+      Gapcursor,
+      Dropcursor.configure({
+        color: "#38bdf8", // TODO: tailwindのconfig resolverを実装する
+        width: 3,
+      }),
       History,
       Placeholder.configure({
         placeholder: "Write something …",
