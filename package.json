@@ -11,6 +11,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tiptap/extension-document": "^2.0.0-beta.218",
+    "@tiptap/extension-heading": "^2.0.0-beta.218",
+    "@tiptap/extension-paragraph": "^2.0.0-beta.218",
+    "@tiptap/extension-text": "^2.0.0-beta.218",
+    "@tiptap/pm": "^2.0.0-beta.218",
+    "@tiptap/react": "^2.0.0-beta.218",
+    "@tiptap/starter-kit": "^2.0.0-beta.218",
     "next": "12.0.8",
     "next-seo": "^4.29.0",
     "prismjs": "^1.26.0",
