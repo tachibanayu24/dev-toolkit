@@ -13,6 +13,8 @@ import OrderedList from "@tiptap/extension-ordered-list";
 import CodeBlockLowlight from "@tiptap/extension-code-block-lowlight";
 import HorizontalRule from "@tiptap/extension-horizontal-rule";
 import Image from "@tiptap/extension-image";
+import TaskItem from "@tiptap/extension-task-item";
+import TaskList from "@tiptap/extension-task-list";
 
 import { lowlight } from "lowlight";
 
@@ -80,6 +82,10 @@ export const WYSIWYGEditor = () => {
 <hr>
 <p>paragpraph</p>
 <img src="https://source.unsplash.com/8xznAGy4HcY/800x400" />
+<ul data-type="taskList">
+  <li data-type="taskItem" data-checked="true">A list item</li>
+  <li data-type="taskItem" data-checked="false">And another one</li>
+</ul>
 `,
     autofocus: "end",
   });
