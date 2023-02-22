@@ -9,6 +9,7 @@ import Heading from "@tiptap/extension-heading";
 import Blockquote from "@tiptap/extension-blockquote";
 import BulletList from "@tiptap/extension-bullet-list";
 import ListItem from "@tiptap/extension-list-item";
+import OrderedList from "@tiptap/extension-ordered-list";
 import CodeBlockLowlight from "@tiptap/extension-code-block-lowlight";
 import HorizontalRule from "@tiptap/extension-horizontal-rule";
 import Image from "@tiptap/extension-image";
@@ -41,6 +42,7 @@ export const WYSIWYGEditor = () => {
       Blockquote,
       BulletList,
       ListItem,
+      OrderedList,
       CodeBlockLowlight.configure({
         lowlight,
       }),
