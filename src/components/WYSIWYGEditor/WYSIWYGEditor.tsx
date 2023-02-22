@@ -13,6 +13,8 @@ import OrderedList from "@tiptap/extension-ordered-list";
 import CodeBlockLowlight from "@tiptap/extension-code-block-lowlight";
 import HorizontalRule from "@tiptap/extension-horizontal-rule";
 import Image from "@tiptap/extension-image";
+import History from "@tiptap/extension-history";
+
 import TaskItem from "@tiptap/extension-task-item";
 import TaskList from "@tiptap/extension-task-list";
 
@@ -50,6 +52,7 @@ export const WYSIWYGEditor = () => {
       }),
       HorizontalRule,
       Image,
+      History,
     ],
     content: `<h1>Heading1</h1>
 <h2>Heading2</h2>
