@@ -7,6 +7,8 @@ import Paragraph from "@tiptap/extension-paragraph";
 import Text from "@tiptap/extension-text";
 import Heading from "@tiptap/extension-heading";
 import Blockquote from "@tiptap/extension-blockquote";
+import BulletList from "@tiptap/extension-bullet-list";
+import ListItem from "@tiptap/extension-list-item";
 
 import style from "./style.module.css";
 
@@ -22,6 +24,8 @@ export const WYSIWYGEditor = () => {
       Text,
       Heading.configure({ levels: [1, 2, 3] }),
       Blockquote,
+      BulletList,
+      ListItem,
     ],
     content: `<h1>Heading1</h1>
 <h2>Heading2</h2>
@@ -30,6 +34,14 @@ export const WYSIWYGEditor = () => {
 <blockquote>
   Nothing is impossible, the word itself says “I’m possible!”
 </blockquote>
+<ul>
+  <li>A list item</li>
+  <li>And another one</li>
+</ul>
+<ol>
+  <li>A list item</li>
+  <li>And another one</li>
+</ol>
 `,
     autofocus: "end",
   });
