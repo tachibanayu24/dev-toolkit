@@ -11,6 +11,7 @@ import BulletList from "@tiptap/extension-bullet-list";
 import ListItem from "@tiptap/extension-list-item";
 import CodeBlockLowlight from "@tiptap/extension-code-block-lowlight";
 import HorizontalRule from "@tiptap/extension-horizontal-rule";
+import Image from "@tiptap/extension-image";
 
 import { lowlight } from "lowlight";
 
@@ -44,6 +45,7 @@ export const WYSIWYGEditor = () => {
         lowlight,
       }),
       HorizontalRule,
+      Image,
     ],
     content: `<h1>Heading1</h1>
 <h2>Heading2</h2>
@@ -75,6 +77,7 @@ export const WYSIWYGEditor = () => {
 <p>paragpraph</p>
 <hr>
 <p>paragpraph</p>
+<img src="https://source.unsplash.com/8xznAGy4HcY/800x400" />
 `,
     autofocus: "end",
   });
