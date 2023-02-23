@@ -1,11 +1,3 @@
-/**
- * #111827 = gray[900]
- *
- *
- *
- *
- */
-
 .ProseMirror:focus-visible {
   outline: none;
 }
@@ -39,9 +31,36 @@
   font-weight: bold;
 }
 
-.editor ol,
 .editor ul {
-  list-style: initial;
+  list-style-type: disc;
+  margin: 4px 0;
+  padding-left: 16px;
+}
+
+.editor ol {
+  list-style-type: decimal;
+  margin: 4px 0;
+  padding-left: 16px;
+}
+
+.editor blockquote {
+  border-left: 3px solid rgba(13, 13, 13, 0.1);
+  padding-left: 16px;
+}
+
+.editor a {
+  cursor: pointer;
+  color: #0369a1;
+}
+
+.editor a:visited {
+  cursor: pointer;
+  color: #0369a1;
+}
+
+.editor hr {
+  border-top: 2px solid #bbb;
+  height: 16px;
 }
 
 .editor > * + * {

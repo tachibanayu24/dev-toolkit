@@ -1,10 +1,9 @@
-// import { useCallback, useState } from "react";
 import type { NextPage } from "next";
 
 import { Card } from "@/components/Card";
 import { useInputKey } from "@/hooks/useInputKey";
 
-const KEYWORDS = ["count", "uuid", "color", "textdiff", "jsondiff", "jsonedit"];
+const KEYWORDS = ["count", "uuid", "color", "textdiff", "jotter", "jsonedit"];
 
 const Home: NextPage = () => {
   const { matchedIndex, hasInputEnter } = useInputKey(KEYWORDS);
@@ -52,10 +51,11 @@ const Home: NextPage = () => {
           hasInputEnter={hasInputEnter}
         />
         <Card
-          title="JSON Diff Checker"
-          description="Get the diff between the two JSONs and show which properties have changed"
+          to="/jotter"
+          title="WYSIWYG Jotter"
+          description="Notion-like WYSIWYG Notepad."
           shortcut={`${KEYWORDS[4]} + ↵`}
-          isComingSoon
+          imagePath="/images/jotter.png"
           isFocus={matchedIndex === 4}
           hasInputEnter={hasInputEnter}
         />
