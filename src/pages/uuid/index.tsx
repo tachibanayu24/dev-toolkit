@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { SyntheticEvent, useCallback, useEffect, useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { v1, v4 } from "uuid";
@@ -55,7 +55,7 @@ const Uuid: NextPage = () => {
   }, [handleCopy, ids]);
 
   const handleSubmit = useCallback(
-    (e) => {
+    (e: SyntheticEvent) => {
       e.preventDefault();
       handleGenerateUUID();
     },
