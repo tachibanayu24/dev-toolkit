@@ -26,15 +26,55 @@ import Link from "@tiptap/extension-link";
 
 import { lowlight } from "lowlight";
 
+import c from "highlight.js/lib/languages/c";
+import cpp from "highlight.js/lib/languages/cpp";
 import css from "highlight.js/lib/languages/css";
-import js from "highlight.js/lib/languages/javascript";
-import ts from "highlight.js/lib/languages/typescript";
+import django from "highlight.js/lib/languages/django";
+import dockerfile from "highlight.js/lib/languages/dockerfile";
+import elm from "highlight.js/lib/languages/elm";
+import go from "highlight.js/lib/languages/go";
+import graphql from "highlight.js/lib/languages/graphql";
 import html from "highlight.js/lib/languages/xml";
+import java from "highlight.js/lib/languages/java";
+import javascript from "highlight.js/lib/languages/javascript";
+import json from "highlight.js/lib/languages/json";
+import kotlin from "highlight.js/lib/languages/kotlin";
+import markdown from "highlight.js/lib/languages/markdown";
+import perl from "highlight.js/lib/languages/perl";
+import php from "highlight.js/lib/languages/php";
+import python from "highlight.js/lib/languages/python";
+import ruby from "highlight.js/lib/languages/ruby";
+import rust from "highlight.js/lib/languages/rust";
+import scala from "highlight.js/lib/languages/scala";
+import scss from "highlight.js/lib/languages/scss";
+import typescript from "highlight.js/lib/languages/typescript";
+import wasm from "highlight.js/lib/languages/wasm";
+import yaml from "highlight.js/lib/languages/yaml";
 
-lowlight.registerLanguage("html", html);
+lowlight.registerLanguage("c", c);
+lowlight.registerLanguage("cpp", cpp);
 lowlight.registerLanguage("css", css);
-lowlight.registerLanguage("js", js);
-lowlight.registerLanguage("ts", ts);
+lowlight.registerLanguage("django", django);
+lowlight.registerLanguage("dockerfile", dockerfile);
+lowlight.registerLanguage("elm", elm);
+lowlight.registerLanguage("go", go);
+lowlight.registerLanguage("graphql", graphql);
+lowlight.registerLanguage("html", html);
+lowlight.registerLanguage("java", java);
+lowlight.registerLanguage("js", javascript);
+lowlight.registerLanguage("json", json);
+lowlight.registerLanguage("kotlin", kotlin);
+lowlight.registerLanguage("markdown", markdown);
+lowlight.registerLanguage("perl", perl);
+lowlight.registerLanguage("php", php);
+lowlight.registerLanguage("python", python);
+lowlight.registerLanguage("ruby", ruby);
+lowlight.registerLanguage("rust", rust);
+lowlight.registerLanguage("scala", scala);
+lowlight.registerLanguage("scss", scss);
+lowlight.registerLanguage("ts", typescript);
+lowlight.registerLanguage("wasm", wasm);
+lowlight.registerLanguage("yaml", yaml);
 
 export const useEditor = () =>
   useEditorOrigin({
@@ -62,7 +102,24 @@ export const useEditor = () =>
       TaskItem.configure({
         nested: true,
       }),
-      CodeBlockLowlight.configure({
+      CodeBlockLowlight.extend({
+        addKeyboardShortcuts() {
+          return {
+            ...this.parent?.(),
+            Tab: () => {
+              this.editor
+                .chain()
+                .focus()
+                .command(({ tr }) => {
+                  tr.insertText("  ");
+                  return true;
+                })
+                .run();
+              return true; // Prevent focus out from editor
+            },
+          };
+        },
+      }).configure({
         lowlight,
       }),
       HorizontalRule,
