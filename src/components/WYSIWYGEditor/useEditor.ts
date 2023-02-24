@@ -88,12 +88,11 @@ export const useEditor = () =>
       ListItem.extend({
         addKeyboardShortcuts() {
           return {
-            Enter: () => this.editor.commands.splitListItem(this.name),
+            ...this.parent?.(),
             Tab: () => {
               this.editor.commands.sinkListItem(this.name);
               return true; // Prevent focus out from editor
             },
-            "Shift-Tab": () => this.editor.commands.liftListItem(this.name),
           };
         },
       }),
@@ -102,24 +101,7 @@ export const useEditor = () =>
       TaskItem.configure({
         nested: true,
       }),
-      CodeBlockLowlight.extend({
-        addKeyboardShortcuts() {
-          return {
-            ...this.parent?.(),
-            Tab: () => {
-              this.editor
-                .chain()
-                .focus()
-                .command(({ tr }) => {
-                  tr.insertText("  ");
-                  return true;
-                })
-                .run();
-              return true; // Prevent focus out from editor
-            },
-          };
-        },
-      }).configure({
+      CodeBlockLowlight.configure({
         lowlight,
       }),
       HorizontalRule,
