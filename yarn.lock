@@ -321,16 +321,15 @@
   integrity sha512-cQ1mjWjSqe6ztglfRRBIAzZ+6Ro5jN7QpSstVMravqW3lu52omXqYx5SfDNycoO6574BoSw2Wijz36RwQLeAsQ==
 
 "@tiptap/extension-bold@^2.0.0-beta.218":
-  version "2.0.0-beta.218"
-  resolved "https://registry.yarnpkg.com/@tiptap/extension-bold/-/extension-bold-2.0.0-beta.218.tgz#9fdd5de1be8fd44f8055f4d18c3714fd7a69cf9e"
-  integrity sha512-XKQ9QiXspGLY9LyZVhPTQFfJQEDzrwCigILG+QwM3WAp/hKNDJsUy4GXRl/Rdtx+5mfqGyh+Zlo41xF2WhoKUg==
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-bold/-/extension-bold-2.0.1.tgz#56a3b7e529156b0c0bc869497e21a4b2633b35a1"
+  integrity sha512-SYzs0e3FcAmJbYQkQ+LLRnoBNrFvG0i2zc+lFbrSYVCiEpqb5QPz5mgmQvnrH/Sl89WewnoeMu7pLqVEpfAWuw==
 
 "@tiptap/extension-bubble-menu@^2.0.0-beta.218":
-  version "2.0.0-beta.218"
-  resolved "https://registry.yarnpkg.com/@tiptap/extension-bubble-menu/-/extension-bubble-menu-2.0.0-beta.218.tgz#e4524a90797e552c39c14717dbc297b1d4bd7538"
-  integrity sha512-NXVaRSoweM54AGCJCJWkY3D9CfYlARtC04+7T8EF0Dwz99RcVzDHCXaNJGk+rMH7vGxsJop4RxHEQO/D2pgADw==
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-bubble-menu/-/extension-bubble-menu-2.0.1.tgz#8be479ff588a22c5b5d59a2042906997d90e272d"
+  integrity sha512-ZA8T7+yjlHzEjBeOlWAqz/9XvBb/rJ7/PiYjM57UXuT/ZgPMPL7KXI/KtS7vaRCnmKaGL6EJ1tBcZhjU24vNzA==
   dependencies:
-    lodash "^4.17.21"
     tippy.js "^6.3.7"
 
 "@tiptap/extension-bullet-list@^2.0.0-beta.218":
@@ -2147,11 +2146,6 @@ lodash.merge@^4.6.2:
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
-
-lodash@^4.17.21:
-  version "4.17.21"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
-  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
