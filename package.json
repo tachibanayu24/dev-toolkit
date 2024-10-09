@@ -47,10 +47,10 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "@types/gtag.js": "^0.0.12",
+    "@types/gtag.js": "^0.0.20",
     "@types/node": "18.13.0",
     "@types/prismjs": "^1.16.8",
-    "@types/react": "18.0.1",
+    "@types/react": "18.0.38",
     "@types/uuid": "^9.0.0",
     "autoprefixer": "^10.4.2",
     "eslint": "8.34.0",
